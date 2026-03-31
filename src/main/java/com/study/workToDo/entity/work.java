@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "tb_work")
 @TableName("tb_work")
-public class work {
+public class Work {
     @Id
     @Column(name = "work_id", length = 100)
     @TableField("work_id")
@@ -34,10 +34,6 @@ public class work {
     @TableField("is_finished")
     private Integer isFinished; // 是否完成
 
-    @Column(name = "is_daily_task")
-    @TableField("is_daily_task")
-    private Integer isDailyTask; // 是否是每日任务
-
     @Column(name = "is_long_life_task")
     @TableField("is_long_life_task")
     private Integer isLongLifeTask; // 是否是长时任务；
@@ -50,16 +46,15 @@ public class work {
     @Column(columnDefinition = "DATETIME")
     private LocalDateTime deadTime; // 任务截止时间
 
-    public work() {
+    public Work() {
     }
 
-    public work(String workId, String workTitle, String workContent, String workComment, Integer isFinished, Integer isDailyTask, Integer isLongLifeTask, LocalDateTime submitTime, LocalDateTime deadTime) {
+    public Work(String workId, String workTitle, String workContent, String workComment, Integer isFinished, Integer isLongLifeTask, LocalDateTime submitTime, LocalDateTime deadTime) {
         this.workId = workId;
         this.workTitle = workTitle;
         this.workContent = workContent;
         this.workComment = workComment;
         this.isFinished = isFinished;
-        this.isDailyTask = isDailyTask;
         this.isLongLifeTask = isLongLifeTask;
         this.submitTime = submitTime;
         this.deadTime = deadTime;
@@ -105,14 +100,6 @@ public class work {
         this.isFinished = isFinished;
     }
 
-    public Integer getIsDailyTask() {
-        return isDailyTask;
-    }
-
-    public void setIsDailyTask(Integer isDailyTask) {
-        this.isDailyTask = isDailyTask;
-    }
-
     public Integer getIsLongLifeTask() {
         return isLongLifeTask;
     }
@@ -139,13 +126,12 @@ public class work {
 
     @Override
     public String toString() {
-        return "work{" +
+        return "Work{" +
                 "workId='" + workId + '\'' +
                 ", workTitle='" + workTitle + '\'' +
                 ", workContent='" + workContent + '\'' +
                 ", workComment='" + workComment + '\'' +
                 ", isFinished=" + isFinished +
-                ", isDailyTask=" + isDailyTask +
                 ", isLongLifeTask=" + isLongLifeTask +
                 ", submitTime=" + submitTime +
                 ", deadTime=" + deadTime +

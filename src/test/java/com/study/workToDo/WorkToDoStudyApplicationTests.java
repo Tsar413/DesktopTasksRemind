@@ -1,10 +1,10 @@
-package com.study.ext;
+package com.study.workToDo;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ExtStudyApplicationTests {
+public class WorkToDoStudyApplicationTests {
 
     @Test
     public void test() {

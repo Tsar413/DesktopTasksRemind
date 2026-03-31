@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.workToDo.mapper.WorkMapper">
+
+    <update id="changeWork" parameterType="com.study.workToDo.entity.Work">
+        update tb_work set
+        dead_time = #{deadTime},
+        work_title = #{workTitle},
+        work_content = #{workContent},
+        work_comment = #{workComment},
+        is_finished = #{isFinished},
+        is_long_life_task = #{isLongLifeTask}
+        where work_id = #{workId};
+    </update>
+
+</mapper>
